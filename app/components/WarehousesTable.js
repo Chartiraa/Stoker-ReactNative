@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { DataTable, PaperProvider } from 'react-native-paper';
-import { CustomerTableFiller } from '../services/DBFunctions';
+import { ProductTableFiller } from '../services/DBFunctions';
 
-function CustomerTable() {
+function WarehouseTable() {
 
     const [page, setPage] = useState(0);
 
@@ -15,7 +15,7 @@ function CustomerTable() {
     const [items, setItems] = useState({});
 
     useEffect(() => {
-        CustomerTableFiller().then((asd) => {
+        ProductTableFiller().then((asd) => {
             setItems(asd);
         })
     },[])
@@ -32,20 +32,12 @@ function CustomerTable() {
             <PaperProvider>
                 <DataTable>
                     <DataTable.Header>
-                        <DataTable.Title>İsim</DataTable.Title>
-                        <DataTable.Title>Soyisim</DataTable.Title>
-                        <DataTable.Title numeric>Tel.</DataTable.Title>
-                        <DataTable.Title numeric>TC</DataTable.Title>
+                        <DataTable.Title>Depo Adı</DataTable.Title>
                     </DataTable.Header>
 
-                    {console.log(items)}
-
                     {Object.keys(items).slice(from, to).map(key => (
-                        <DataTable.Row key={items[key].name}>
-                            <DataTable.Cell>{items[key].name}</DataTable.Cell>
-                            <DataTable.Cell>{items[key].surname}</DataTable.Cell>
-                            <DataTable.Cell numeric>{items[key].tel}</DataTable.Cell>
-                            <DataTable.Cell numeric>{items[key].tc}</DataTable.Cell>
+                        <DataTable.Row key={items[key].warehouseName}>
+                            <DataTable.Cell>{items[key].warehouseName}</DataTable.Cell>
                         </DataTable.Row>
                     ))}
 
@@ -66,7 +58,7 @@ function CustomerTable() {
     )
 }
 
-function CustomerTableEditable(props) {
+function WarehouseTableEditable(props) {
 
     const [page, setPage] = useState(0);
 
@@ -79,7 +71,7 @@ function CustomerTableEditable(props) {
     const [items, setItems] = useState({});
 
     useEffect(() => {
-        CustomerTableFiller().then((asd) => {
+        ProductTableFiller().then((asd) => {
             setItems(asd);
         })
     },[])
@@ -95,21 +87,16 @@ function CustomerTableEditable(props) {
         <>
             <PaperProvider>
                 <DataTable>
-                    <DataTable.Header>
-                        <DataTable.Title>İsim</DataTable.Title>
-                        <DataTable.Title>Soyisim</DataTable.Title>
-                        <DataTable.Title numeric>Tel.</DataTable.Title>
-                        <DataTable.Title numeric>TC</DataTable.Title>
+
+                <DataTable.Header>
+                        <DataTable.Title>Depo Adı</DataTable.Title>
                     </DataTable.Header>
 
                     {console.log(items)}
 
                     {Object.keys(items).slice(from, to).map(key => (
-                        <DataTable.Row onPress={() => props.setClick(items[key].name)} key={items[key].name}>
-                            <DataTable.Cell>{items[key].name}</DataTable.Cell>
-                            <DataTable.Cell>{items[key].surname}</DataTable.Cell>
-                            <DataTable.Cell numeric>{items[key].tel}</DataTable.Cell>
-                            <DataTable.Cell numeric>{items[key].tc}</DataTable.Cell>
+                        <DataTable.Row onPress={() => props.setClick(items[key].warehouseName)} key={items[key].warehouseName}>
+                            <DataTable.Cell>{items[key].warehouseName}</DataTable.Cell>
                         </DataTable.Row>
                     ))}
 
@@ -130,4 +117,4 @@ function CustomerTableEditable(props) {
     )
 }
 
-export { CustomerTable, CustomerTableEditable }
+export { WarehouseTable, WarehouseTableEditable }

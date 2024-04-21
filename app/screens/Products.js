@@ -1,5 +1,5 @@
 import { ScrollView, Text, StyleSheet } from 'react-native';
-import ProductTable from '../components/ProductTable';
+import { ProductTable } from '../components/ProductTable';
 
 import colors from '../assets/colors';
 

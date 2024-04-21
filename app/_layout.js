@@ -1,5 +1,5 @@
-import { createDrawerNavigator, DrawerItemList, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
-import { SafeAreaView, View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
+import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faUserPlus, faHome, faUser, faBottleWater, faPlus, faWarehouse } from '@fortawesome/free-solid-svg-icons'

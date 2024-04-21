@@ -1,5 +1,5 @@
 import { ScrollView, Text, StyleSheet } from 'react-native';
-import ProductTable from '../components/ProductTable';
+import { WarehouseTable } from '../components/WarehousesTable';
 
 import colors from '../assets/colors';
 
@@ -11,7 +11,7 @@ export default function App() {
             <ScrollView>
                 <Text style={styles.Title}>Depo Listesi</Text>
 
-                <ProductTable />
+                <WarehouseTable />
             </ScrollView>
         </>
     );
