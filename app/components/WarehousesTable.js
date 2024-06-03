@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { DataTable, PaperProvider } from 'react-native-paper';
-import { ProductTableFiller } from '../services/DBFunctions';
+import { WarehouseTableFiller } from '../services/DBFunctions';
 
 function WarehouseTable() {
 
@@ -15,7 +15,7 @@ function WarehouseTable() {
     const [items, setItems] = useState({});
 
     useEffect(() => {
-        ProductTableFiller().then((asd) => {
+        WarehouseTableFiller().then((asd) => {
             setItems(asd);
         })
     },[])

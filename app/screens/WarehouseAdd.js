@@ -29,7 +29,7 @@ export default function WarehouseAdd() {
         <>
             <ScrollView>
                 <Text style={styles.Title}>Depo Kayıt Formu</Text>
-                <TextInput autoCapitalize='characters' placeholderTextColor={colors.inputPlaceholder} value={warehouseName} onChangeText={(e) => setName(e)} style={styles.input} placeholder='Depo Adı' />
+                <TextInput autoCapitalize='characters' placeholderTextColor={colors.inputPlaceholder} value={warehouseName} onChangeText={(e) => setWarehouseName(e)} style={styles.input} placeholder='Depo Adı' />
 
                 <Button style={styles.Button} textColor={colors.Green} labelStyle={{ fontSize: 18}} icon="account-check" mode="outlined" onPress={onClickHandler}>Depo Kaydı Oluştur</Button>
 
